@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="FISUDA" name="replace-value-list" version="0.1.0">
+
+    <details>
+        <title>Replace value list</title>
+        <homepage>https://github.com/lets-fiware/replace-value-list-operator</homepage>
+        <authors>Kazuhito Suda &lt;wirecloud@fisuda.jp&gt;</authors>
+        <email>wirecloud@fisuda.jp</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>Replace value list operator</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>MIT</license>
+        <issuetracker>https://github.com/lets-fiware/replace-value-list-operator/issues</issuetracker>
+    </details>
+
+    <requirements>
+        <feature name="MapshupPlatform"/>
+    </requirements>
+
+    <preferences>
+        <preference name="send_nulls" type="boolean" label="Send Nulls" description="Enable this option to propagate null values, leave it disable to filter null events" default="true" />
+        <preference name="replace" label="Replace" description="List of replace" default="-9999,missing data" type="text"/>
+    </preferences>
+
+    <wiring>
+        <inputendpoint name="input" type="text" label="input" description="input data" />
+        <outputendpoint name="output" type="text" label="output" description="output list" friendcode="json" />
+    </wiring>
+
+    <scripts>
+        <script src="js/main.js"/>
+    </scripts>
+
+</operator>
